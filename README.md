@@ -3,8 +3,7 @@
 ![Python >=3.6](https://img.shields.io/badge/Python->=3.6-blue.svg)
 ![PyTorch >=1.1](https://img.shields.io/badge/PyTorch->=1.1-yellow.svg)
 
-## Accountable Textual-Visual Chat Learns to Reject
-Human Instructions in Image Re-creation
+## Accountable Textual-Visual Chat Learns to Reject Human Instructions in Image Re-creation
 
 The *official* repository for [Accountable Textual-Visual Chat Learns to Reject
 Human Instructions in Image Re-creation](https://arxiv.org/pdf/2303.05983.pdf).
