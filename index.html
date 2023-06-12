@@ -1,11 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ATVM: New Benchmarks for Accountable Text-based Visual Manipulation</title>
+<title>Accountable Textual-Visual Chat Learns to Reject Human Instructions in Image Re-creation</title>
 
 <!-- Meta tags for search engines to crawl -->
 <meta name="robots" content="index,follow">
-<meta name="description" content="Given a command, humans can execute a task with both actions and feedback, which is crucial in many situations where uncertain behaviors are required to be controlled. However, existing benchmarks do not integrate text-based image manipulation and visual reasoning tasks into a unified dataset, limiting the development of human-like intelligence. In this paper, we construct datasets for such a novel task, termed Accountable Text-based Visual Manipulation (ATVM), in which the objects in an image will be manipulated conditioned on the user queries, and the machine is responsible for simultaneously generating the feedback to tell whether the actions can be done. To explore the feasibility of our proposal, three new datasets, including two synthetic datasets, CLEVR-ATVM-S (93k), CLEVR-ATVM-M (620k), and one manually pictured dataset, FruitATVM (50k), are created to analyze the quality of image generation, accuracy of answer, and uncertainty behavior under imperfect user queries.">
-<meta name="keywords" content="text-based image manipulation; computer vision; deep learning">
+<meta name="description" content="The release of ChatGPT and GPT-4 has brought widespread attention to the multimodal dialogue systems. However, academia community lacks a dataset that can validate the multimodal generation capability of Visual Language Model (VLM) on textual-visual chat task. In this paper, we first construct two new multimodal datasets, synthetic CLEVR-ATVC dataset (620K) and manually pictured Fruit-ATVC dataset (50K), that boasts visual and text-based inputs and outputs. In the resulting text-based visual re-creation task, one text-image pair as the query is fed into the machine, and the VLM needs to output both re-created image and textual feedback. In order for the multimodal system to be able to reject human requests (i.e., be accountable), as in language-based ChatGPT conversations, we develop and add some rules to the datasets as supervision signals, so that the trained VLM can give a yes or no answer after visual and textual reasoning and a language explanation is given why the human instruction cannot be executed. In our method, we propose a two-state training procedure to train the image auto-encoder and auto-regressive transformer from scratch. The former one is a discrete variational autoencoder (dVAE) to compress each image into short tokens, then the text tokens are concatenated together as a single stream of data to be fed into the latter one. The decoder-based transformer is used to generate the visual re-creation and textual feedback. We provide comprehensive analysis of experimental results in re-created image quality, answer accuracy, and the model behavior in the face of uncertainty and imperfect user queries. We hope our explorations and findings can bring valuable insights about the accountability of textual-visual generative models." <meta name="keywords" content="computer vision; deep learning">
 <link rel="author" href="https://matrix-alpha.github.io/">
 
 <!-- Fonts and stuff -->
@@ -22,10 +21,10 @@
     <div id="content-inner">
 
       <div class="section head">
-        <h1>Accountable Text-based Visual Re-creation</h1>
+        <h1>Accountable Textual-Visual Chat Learns to Reject Human Instructions in Image Re-creation</h1>
 
 	<div class="authors">
-	  <a href="https://matrix-alpha.github.io/">Zhiwei Zhang</a><sup>13</sup>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a href="https://matrix-alpha.github.io/">Zhiwei Zhang</a><sup>134</sup>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  <a href="https://scholar.google.com.hk/citations?user=W4htBesAAAAJ&hl=en">Yuliang Liu</a><sup>123</sup>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <!-- <a href="http://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a><sup>12✉</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 	  <!-- <a href="http://dahua.site/">Dahua Lin</a><sup>12✉</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
@@ -34,12 +33,13 @@
 	<div class="affiliations">
 	  <a href="http://mmlab.ie.cuhk.edu.hk/"><sup>1</sup>The Chinese University of Hong Kong</a><br>
 	  <a href="http://english.hust.edu.cn/"><sup>2</sup>Huazhong University of Science and Technology</a><br>
-	  <a href="https://www.cpii.hk/"><sup>3</sup>Centre for Perceptual and Interactive Intelligence</a><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a href=""><sup>3</sup>Centre for Perceptual and Interactive Intelligence</a><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href=""><sup>3</sup>HyperEvol Research</a><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	</div>
     </div>
 
 
-    <center><img src="./atvm/result-m.png" border="0" width="80%"></center>
+    <center><img src="./atvm/CLEVR-ATVC.png" border="0" width="80%"></center>
 
 	    
 <div class="section code">
@@ -65,7 +65,7 @@
 	<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       	<img src="./files/python_api.jpeg" width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="" target="_blank" class="imageLink"><img src="./files/download.jpeg" width="30%"></a>
+	<a href="https://drive.google.com/drive/folders/1upbW2Dyg5jz31I3ZeQHp6cjnZTySLhn-?usp=drive_link" target="_blank" class="imageLink"><img src="./files/download.jpeg" width="30%"></a>
     </div>
 
 <br>
